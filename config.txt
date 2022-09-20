@@ -1,0 +1,31 @@
+{
+    "Keybindings": {
+        "Main": {
+            "Help": "H",
+            "Markup": "J",
+            "Screenshot": "L",
+            "Learn": "O",
+            "Window": "I",
+            "SaveNewMarked": "Y"
+        },
+        "Markup": {
+            "Help": "H",
+            "Save markup": "M",
+            "Ignore": "N",
+            "Quit": "Q"
+        },
+        "Help": {
+            "Quit": "Q"
+        },
+        "SaveNewMarked": {
+            "Quit": "Q"
+        },
+        "Window": {
+            "Help": "H",
+            "Quit": "Q"
+        }
+    },
+    "Common": {
+        "SaveMarkedToPersistent": "0"
+    }
+}

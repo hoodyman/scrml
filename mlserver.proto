@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option go_package = "./protos";
+
+service Messager {
+  rpc Test (VoidMsg) returns (VoidMsg) {}
+
+  rpc AppendTrainingSample (MsgSample) returns (MsgError) {}
+  rpc InitMlParams (MsgInit) returns (MsgError) {}
+  rpc Train (VoidMsg) returns (VoidMsg) {}
+  rpc AppendPredictSample (MsgPredIn) returns (MsgError) {}
+  rpc Predict (VoidMsg) returns (MsgPredOut) {}
+}
+
+message Message {
+  string Msg = 1;
+}
+
+message MsgSample {
+  bytes XData = 1;
+  int64 YData = 2;
+}
+
+message MsgPredIn {
+  bytes Data = 1;
+}
+
+message MsgPredOut {
+  bytes Data = 1;
+  EnumError Err = 2;
+}
+
+message MsgInit {
+  int64 SampleSize = 1;
+}
+
+enum EnumError {
+  ENUMERROR_NOERROR = 0;
+  ENUMERROR_NOOUTDATA = 1;
+}
+
+message MsgError {
+  EnumError Err = 1;
+}
+
+message VoidMsg {}
